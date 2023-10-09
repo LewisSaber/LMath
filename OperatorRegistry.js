@@ -128,7 +128,6 @@ function registerCommonOperators() {
       }
 
       if (a.parent instanceof ArrayNode) {
-        console.log({ p: a.parent })
         a.parent.replaceConnection(
           a,
           OperatorRegistry.createOrReturnNode(b.solve())
@@ -241,11 +240,7 @@ function registerCommonOperators() {
       start.solve()
       for (; condition.solve(); step.solve()) {
         job.solve()
-        //console.log()
       }
-      // console.log(condition.solve())
-      // console.log({ start, condition, step, job })
-      // console.log(condition.scope)
       return 0
     },
 

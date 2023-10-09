@@ -44,7 +44,6 @@ class MathNode {
   replaceConnection(node, newNode) {
     let i = 0
     for (const connection of this) {
-      console.log({ connection })
       if (connection == node) {
         this.addConnectionAt(newNode, i)
       }
@@ -117,6 +116,7 @@ class MathNode {
   toString() {
     return this.value
   }
+  getJS() {}
 }
 
 export default MathNode

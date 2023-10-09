@@ -27,7 +27,7 @@ out(y)
 ;},{})
 out p
 `)
-console.log(instance2)
+console.log(instance2.getVariable("x"))
 
 // instance.execute(`
 // x = []

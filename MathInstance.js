@@ -1,4 +1,5 @@
 import LMath from "./LMath.js"
+import MathNode from "./MathNode.js"
 import Scope from "./Scope.js"
 
 export default class MathInstance {
@@ -37,5 +38,11 @@ export default class MathInstance {
       LMath.solve(this.leftoverline, this.scope)
       this.leftoverline = ""
     }
+  }
+
+  getVariable(variableName) {
+    let variable = this.scope.getValue(variableName)
+    if (variable instanceof MathNode) return variable.getJS()
+    return variable
   }
 }

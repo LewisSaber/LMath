@@ -33,4 +33,15 @@ export default class ArrayNode extends MathNode {
       this.addConnectionAt(OperatorRegistry.createNode(0), index)
     return this.getConnection(index)
   }
+
+  getJS() {
+    let newArr = []
+    for (const connection of this) {
+      let node = connection.solve()
+      if (node instanceof MathNode) {
+        newArr.push(node.toJS())
+      } else newArr.push(node)
+    }
+    return newArr
+  }
 }

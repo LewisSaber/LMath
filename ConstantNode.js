@@ -10,4 +10,7 @@ export default class ContantNode extends MathNode {
   toString() {
     return this.value.toString()
   }
+  toJS() {
+    return this.value()
+  }
 }

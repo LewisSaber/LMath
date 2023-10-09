@@ -19,4 +19,11 @@ export default class VariableNode extends MathNode {
   toString() {
     return this.value
   }
+  toJS() {
+    let variable = this.solve()
+    if (variable instanceof MathNode) {
+      return variable.toJS()
+    }
+    return variable
+  }
 }
